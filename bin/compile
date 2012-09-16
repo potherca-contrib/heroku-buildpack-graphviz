@@ -39,7 +39,7 @@ make install >/dev/null 2>&1
 # install graphviz binaries
 GRAPHVIZ_BIN_DIR=$BUILD_DIR"/.graphviz/bin/"
 mkdir -p $(dirname $GRAPHVIZ_BIN_DIR)
-cp $CACHE_DIR/.tools/graphviz/dot $GRAPHVIZ_BIN_DIR
+cp $CACHE_DIR/.tools/graphviz/bin/dot $GRAPHVIZ_BIN_DIR
 
 echo "grapvhiz installed" | indent
 
