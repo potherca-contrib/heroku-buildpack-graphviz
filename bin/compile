@@ -35,6 +35,12 @@ cd graphviz-2.28.0
 ./configure --prefix=$CACHE_DIR/.tools/graphviz >/dev/null 2>&1
 make >/dev/null 2>&1
 make install >/dev/null 2>&1
+
+# install graphviz binaries
+GRAPHVIZ_BIN_DIR=$BUILD_DIR"/.graphviz/bin/"
+mkdir -p $(dirname $GRAPHVIZ_BIN_DIR)
+cp $CACHE_DIR/.tools/graphviz/dot $GRAPHVIZ_BIN_DIR
+
 echo "grapvhiz installed" | indent
 
 exit 0
