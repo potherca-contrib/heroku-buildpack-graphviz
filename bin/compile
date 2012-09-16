@@ -37,9 +37,9 @@ make >/dev/null 2>&1
 make install >/dev/null 2>&1
 
 # install graphviz binaries
-GRAPHVIZ_BIN_DIR=$BUILD_DIR"/.graphviz/bin/"
+GRAPHVIZ_BIN_DIR=$BUILD_DIR".graphviz/bin/"
 DOT_BIN="$CACHE_DIR/.tools/graphviz/bin/dot"
-mkdir -p $(dirname $GRAPHVIZ_BIN_DIR)
+mkdir -p $GRAPHVIZ_BIN_DIR
 cp $DOT_BIN $GRAPHVIZ_BIN_DIR
 
 echo "grapvhiz installed" | indent
