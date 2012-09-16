@@ -5,7 +5,5 @@ cat <<EOF
 ---
 config_vars:
   PATH: $PATH:.graphviz/bin/:/usr/local/bin:/usr/bin:/bin:
-default_process_types:
-  console: bin/fakesu
 EOF
 
