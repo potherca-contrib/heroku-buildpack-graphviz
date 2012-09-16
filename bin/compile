@@ -42,6 +42,6 @@ DOT_BIN="$CACHE_DIR/.tools/graphviz/bin/dot"
 mkdir -p $GRAPHVIZ_BIN_DIR
 cp $DOT_BIN $GRAPHVIZ_BIN_DIR
 
-echo "grapvhiz installed" | indent
+echo "grapvhiz installed at $GRAPHVIZ_BIN_DIR" | indent
 
 exit 0
