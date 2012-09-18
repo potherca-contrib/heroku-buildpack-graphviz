@@ -42,6 +42,6 @@ GRAPHVIZ_DIR="$BUILD_DIR/.graphviz/"
 mkdir -p $GRAPHVIZ_DIR
 cp -r $GRAPHVIZ_BUILD_DIR $GRAPHVIZ_DIR
 
-echo "grapvhiz installed at $GRAPHVIZ_BIN_DIR" | indent
+echo "grapvhiz installed at $GRAPHVIZ_DIR" | indent
 
 exit 0
