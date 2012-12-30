@@ -17,14 +17,24 @@ function indent() {
   esac
 }
 
+function escape_regex() {
+  sed s/\\//\\\\\\//g
+}
+
 BUILDPACK_DIR=`cd $(dirname $0); cd ..; pwd`
 BUILD_DIR=$1
 CACHE_DIR=$2
-GRAPHVIZ_DIR="$BUILD_DIR/.graphviz/"
+GRAPHVIZ_DIR="$BUILD_DIR/vendor/builds/heroku-graphviz"
 
 mkdir -p $GRAPHVIZ_DIR
 
+mv $BUILDPACK_DIR/heroku-fontconfig $GRAPHVIZ_DIR
+FONTCONFIG_DIR="$GRAPHVIZ_DIR/heroku-fontconfig"
+
+sed -i'' -e"s/^prefix=.*/prefix=`echo $FONTCONFIG_DIR | escape_regex`/" "$FONTCONFIG_DIR/lib/pkgconfig/fontconfig.pc"
+
 export PATH=/sbin:/usr/sbin:$PATH:
+export PKG_CONFIG_PATH="$FONTCONFIG_DIR/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 echo "-----> Fetching and installing graphviz"
 cd $WGET_BUILD
