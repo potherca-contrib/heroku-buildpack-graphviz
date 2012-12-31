@@ -38,12 +38,12 @@ export PKG_CONFIG_PATH="$FONTCONFIG_DIR/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 echo "-----> Fetching and installing graphviz"
 cd $WGET_BUILD
-curl -O http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.28.0.tar.gz >/dev/null 2>&1
-tar zxvf graphviz-2.28.0.tar.gz >/dev/null 2>&1
+curl -O http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.28.0.tar.gz
+tar zxvf graphviz-2.28.0.tar.gz
 cd graphviz-2.28.0
-./configure --prefix=$GRAPHVIZ_DIR --with-pangocairo >/dev/null 2>&1
-make >/dev/null 2>&1
-make install >/dev/null 2>&1
+./configure --prefix=$GRAPHVIZ_DIR --with-pangocairo
+make
+make install
 
 echo "grapvhiz installed at $GRAPHVIZ_DIR" | indent
 
