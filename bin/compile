@@ -48,7 +48,7 @@ else
 
   echo "-----> Fetching and installing graphviz"
   cd $WGET_BUILD
-  curl -O http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.28.0.tar.gz
+  curl -O http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.34.0.tar.gz
   tar zxvf graphviz-2.28.0.tar.gz
   cd graphviz-2.28.0
   ./configure --prefix=$GRAPHVIZ_DIR --with-pangocairo
@@ -58,6 +58,10 @@ else
   cp -R $GRAPHVIZ_DIR $GRAPHVIZ_CACHE_DIR
 
 fi
+
+# Set context environment variables.
+set-env PATH '$PATH:$GRAPHVIZ_DIR/bin'
+
 echo "grapvhiz installed at $GRAPHVIZ_DIR" | indent
 
 exit 0
