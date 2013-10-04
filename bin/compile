@@ -67,7 +67,7 @@ else
 fi
 
 # Set context environment variables.
-set-env PATH '$PATH:'"$GRAPHVIZ_DIR/bin"
+set-env PATH '$PATH:$HOME/vendor/builds/heroku-graphviz/bin'
 
 echo "grapvhiz installed at $GRAPHVIZ_DIR" | indent
 
