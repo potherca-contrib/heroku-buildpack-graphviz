@@ -68,8 +68,8 @@ fi
 
 # Set context environment variables.
 set-env PATH '$PATH:$HOME/vendor/builds/heroku-graphviz/bin'
-set-env LD_LIBRARY_PATH: '/app/vendor/builds/heroku-graphviz/lib/:/app/vendor/builds/heroku-graphviz/heroku-fontconfig/lib/'
-set-env FONTCONFIG_PATH: '/app/vendor/builds/heroku-graphviz/heroku-fontconfig/etc/fonts'
+set-env LD_LIBRARY_PATH '$HOME/vendor/builds/heroku-graphviz/lib/:$HOME/vendor/builds/heroku-graphviz/heroku-fontconfig/lib/'
+set-env FONTCONFIG_PATH '$HOME/vendor/builds/heroku-graphviz/heroku-fontconfig/etc/fonts'
 
 echo "grapvhiz installed at $GRAPHVIZ_DIR" | indent
 
