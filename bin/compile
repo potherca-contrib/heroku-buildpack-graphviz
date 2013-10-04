@@ -21,11 +21,17 @@ function escape_regex() {
   sed s/\\//\\\\\\//g
 }
 
+# Usage: $ set-env key value
+function set-env (){
+  echo "export $1=$2" >> $PROFILE_PATH
+}
+
 BUILDPACK_DIR=`cd $(dirname $0); cd ..; pwd`
 BUILD_DIR=$1
 CACHE_DIR=$2
 GRAPHVIZ_CACHE_DIR="$CACHE_DIR/heroku-graphviz/"
 GRAPHVIZ_DIR="$BUILD_DIR/vendor/builds/heroku-graphviz/"
+PROFILE_PATH="$BUILD_DIR/.profile.d/graphviz.sh"
 
 mkdir -p $GRAPHVIZ_DIR 
 mkdir -p $GRAPHVIZ_CACHE_DIR 
@@ -60,7 +66,7 @@ else
 fi
 
 # Set context environment variables.
-set-env PATH '$PATH:$GRAPHVIZ_DIR/bin'
+set-env PATH '$PATH:'"$GRAPHVIZ_DIR/bin"
 
 echo "grapvhiz installed at $GRAPHVIZ_DIR" | indent
 
