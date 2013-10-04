@@ -4,8 +4,6 @@
 cat <<EOF
 ---
 config_vars:
-  PATH: '/app/vendor/builds/heroku-graphviz/heroku-fontconfig/bin/:/app/vendor/builds/heroku-graphviz/bin/:/usr/local/bin:/usr/bin:/bin:'
-  LD_LIBRARY_PATH: '/app/vendor/builds/heroku-graphviz/lib/:/app/vendor/builds/heroku-graphviz/heroku-fontconfig/lib/'
-  FONTCONFIG_PATH: '/app/vendor/builds/heroku-graphviz/heroku-fontconfig/etc/fonts'
+
 EOF
 
