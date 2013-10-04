@@ -35,6 +35,7 @@ PROFILE_PATH="$BUILD_DIR/.profile.d/graphviz.sh"
 
 mkdir -p $GRAPHVIZ_DIR 
 mkdir -p $GRAPHVIZ_CACHE_DIR 
+mkdir -p $(dirname $PROFILE_PATH)
 
 cp "$BUILDPACK_DIR/version" $GRAPHVIZ_DIR
 
