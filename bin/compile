@@ -53,11 +53,13 @@ else
   export PATH=/sbin:/usr/sbin:$PATH:
   export PKG_CONFIG_PATH="$FONTCONFIG_DIR/lib/pkgconfig:$PKG_CONFIG_PATH"
 
+  GV_VERSION="2.34.0"
+  
   echo "-----> Fetching and installing graphviz"
   cd $WGET_BUILD
-  curl -O http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.34.0.tar.gz
-  tar zxvf graphviz-2.28.0.tar.gz
-  cd graphviz-2.28.0
+  curl -O http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-${GV_VERSION}.tar.gz
+  tar zxvf graphviz-${GV_VERSION}.tar.gz
+  cd graphviz-${GV_VERSION}
   ./configure --prefix=$GRAPHVIZ_DIR --with-pangocairo
   make
   make install
