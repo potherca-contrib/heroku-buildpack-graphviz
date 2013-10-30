@@ -45,13 +45,13 @@ if [ -f $GRAPHVIZ_CACHE_DIR/version ] && [ `cat $GRAPHVIZ_CACHE_DIR/version` = `
   cp -R $GRAPHVIZ_CACHE_DIR $GRAPHVIZ_DIR
 else
 
-  mv $BUILDPACK_DIR/heroku-fontconfig $GRAPHVIZ_DIR
-  FONTCONFIG_DIR="$GRAPHVIZ_DIR/heroku-fontconfig"
+  #mv $BUILDPACK_DIR/heroku-fontconfig $GRAPHVIZ_DIR
+  #FONTCONFIG_DIR="$GRAPHVIZ_DIR/heroku-fontconfig"
 
-  sed -i'' -e"s/^prefix=.*/prefix=`echo $FONTCONFIG_DIR | escape_regex`/" "$FONTCONFIG_DIR/lib/pkgconfig/fontconfig.pc"
+  #sed -i'' -e"s/^prefix=.*/prefix=`echo $FONTCONFIG_DIR | escape_regex`/" "$FONTCONFIG_DIR/lib/pkgconfig/fontconfig.pc"
 
   export PATH=/sbin:/usr/sbin:$PATH:
-  export PKG_CONFIG_PATH="$FONTCONFIG_DIR/lib/pkgconfig:$PKG_CONFIG_PATH"
+  #export PKG_CONFIG_PATH="$FONTCONFIG_DIR/lib/pkgconfig:$PKG_CONFIG_PATH"
 
   GV_VERSION="2.34.0"
   
@@ -70,8 +70,8 @@ fi
 
 # Set context environment variables.
 set-env PATH '$PATH:$HOME/vendor/builds/heroku-graphviz/bin'
-set-env LD_LIBRARY_PATH '$HOME/vendor/builds/heroku-graphviz/lib/:$HOME/vendor/builds/heroku-graphviz/heroku-fontconfig/lib/'
-set-env FONTCONFIG_PATH '$HOME/vendor/builds/heroku-graphviz/heroku-fontconfig/etc/fonts'
+set-env LD_LIBRARY_PATH '$HOME/vendor/builds/heroku-graphviz/lib/' #:$HOME/vendor/builds/heroku-graphviz/heroku-fontconfig/lib/'
+#set-env FONTCONFIG_PATH '$HOME/vendor/builds/heroku-graphviz/heroku-fontconfig/etc/fonts'
 
 echo "grapvhiz installed at $GRAPHVIZ_DIR" | indent
 
