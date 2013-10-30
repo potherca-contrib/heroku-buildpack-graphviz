@@ -61,7 +61,7 @@ else
   tar zxvf graphviz-${GV_VERSION}.tar.gz
   cd graphviz-${GV_VERSION}
   ./configure --prefix=$GRAPHVIZ_DIR --with-pangocairo
-  make
+  make --quiet
   make install
   rm -rf $GRAPHVIZ_CACHE_DIR
   cp -R $GRAPHVIZ_DIR $GRAPHVIZ_CACHE_DIR
